@@ -6,23 +6,35 @@ const hades = document.getElementById('hades');
 
 //MINOS
 const styles1 = `
-    background-image: url('https://s1.zerochan.net/Griffon.Minos.600.598097.jpg');
+    background-image: url('https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Minos/FemaleVersion/Minos_Female_001.jpg');
 `;
 //AIACOS
 const styles2 = `
-    background-image: url('https://i.pinimg.com/474x/31/64/2b/31642bc9f59d85778c8b1d114dfa1241.jpg');
+    background-image: url('https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Aiacos/FemaleVersion/Aiacos_Female_001.jpg');
 `;
 //RHADAMANTHYS
 const styles3 = `
-    background-image: url('https://i.servimg.com/u/f58/12/54/76/82/tm/75faa910.jpg');
+    background-image: url('https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Rhadamanthys/FemaleVersion/Rhadamanthys_Female_001.jpg');
 `;
 //HADES
 const styles4 = `
     background-image: url('https://i0.wp.com/pbs.twimg.com/media/FdvL9ybX0AAFWud.jpg?ssl=1');
 `;
 
+//FONDO BLUR PARA EL "image-blur"
+const imageBlur = document.querySelector('.image-blur');
 
-minos.addEventListener('click',()=>image.setAttribute('style',styles1));
-aiacos.addEventListener('click',()=>image.setAttribute('style',styles2));
-rhadamanthys.addEventListener('click',()=>image.setAttribute('style',styles3));
+minos.addEventListener('click',()=>{
+    image.setAttribute('style',styles1);
+    imageBlur.style.backgroundImage = `url(${'https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Minos/FemaleVersion/Minos_Female_001.jpg'})`;
+});
+aiacos.addEventListener('click',()=>{
+    image.setAttribute('style',styles2);
+    imageBlur.style.backgroundImage = `url(${'https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Aiacos/FemaleVersion/Aiacos_Female_001.jpg'})`;
+
+});
+rhadamanthys.addEventListener('click',()=>{
+    image.setAttribute('style',styles3);
+    imageBlur.style.backgroundImage = `url(${'https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Rhadamanthys/FemaleVersion/Rhadamanthys_Female_001.jpg'})`
+});
 hades.addEventListener('click',()=>image.setAttribute('style',styles4));

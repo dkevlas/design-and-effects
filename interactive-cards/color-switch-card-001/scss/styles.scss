@@ -5,7 +5,18 @@
 }
 body{
     padding-top: 5%;
-    background-color: #2C2C2C;
+    .image-blur{
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        background-position: center;
+        background-size: cover;
+        filter: blur(10px);
+        opacity: .9;
+    }
 }
 .container{
     width: 300px;
