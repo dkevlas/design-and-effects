@@ -1,0 +1,17 @@
+//Breakpoint
+
+$breakpoint: (
+    small: 0px,
+    medium: 640px,
+    large: 1024px,
+    xlarge: 1200px,
+    xxlarge: 1440px,
+);
+
+//Media Querie (mq)
+
+@mixin mq($bp){
+    @media screen and (min-width: map-get($breakpoint,$bp)){
+        @content;
+    };
+};
