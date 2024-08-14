@@ -2,39 +2,35 @@ const image = document.querySelector('.div-img');
 const minos = document.getElementById('minos');
 const aiacos = document.getElementById('aiacos');
 const rhadamanthys = document.getElementById('rhadamanthys');
-const hades = document.getElementById('hades');
+const reset = document.getElementById('reset');
 
+//PANDORA
+const imgPandora = `https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Pandora/Pandora_001.jpg`;
 //MINOS
-const styles1 = `
-    background-image: url('https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Minos/FemaleVersion/Minos_Female_001.jpg');
-`;
+const imgMinos = 'https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Minos/FemaleVersion/Minos_Female_001.jpg';
 //AIACOS
-const styles2 = `
-    background-image: url('https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Aiacos/FemaleVersion/Aiacos_Female_001.jpg');
-`;
+const imgAiacos = 'https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Aiacos/FemaleVersion/Aiacos_Female_001.jpg';
 //RHADAMANTHYS
-const styles3 = `
-    background-image: url('https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Rhadamanthys/FemaleVersion/Rhadamanthys_Female_001.jpg');
-`;
-//HADES
-const styles4 = `
-    background-image: url('https://i0.wp.com/pbs.twimg.com/media/FdvL9ybX0AAFWud.jpg?ssl=1');
-`;
+const imgRhadamanthys = 'https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Rhadamanthys/FemaleVersion/Rhadamanthys_Female_001.jpg';
 
 //FONDO BLUR PARA EL "image-blur"
 const imageBlur = document.querySelector('.image-blur');
 
 minos.addEventListener('click',()=>{
-    image.setAttribute('style',styles1);
-    imageBlur.style.backgroundImage = `url(${'https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Minos/FemaleVersion/Minos_Female_001.jpg'})`;
+    image.style.backgroundImage = `url(${imgMinos})`;
+    imageBlur.style.backgroundImage = `url(${imgMinos})`;
 });
 aiacos.addEventListener('click',()=>{
-    image.setAttribute('style',styles2);
-    imageBlur.style.backgroundImage = `url(${'https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Aiacos/FemaleVersion/Aiacos_Female_001.jpg'})`;
-
+    image.style.backgroundImage = `url(${imgAiacos})`;
+    imageBlur.style.backgroundImage = `url(${imgAiacos})`;
 });
 rhadamanthys.addEventListener('click',()=>{
-    image.setAttribute('style',styles3);
-    imageBlur.style.backgroundImage = `url(${'https://global-media-repository.s3.us-east-2.amazonaws.com/knights-of-the-zodiac/Judges/Rhadamanthys/FemaleVersion/Rhadamanthys_Female_001.jpg'})`
+    image.style.backgroundImage = `url(${imgRhadamanthys})`;
+    imageBlur.style.backgroundImage = `url(${imgRhadamanthys})`;
 });
-hades.addEventListener('click',()=>image.setAttribute('style',styles4));
+reset.addEventListener('click',()=>{
+    image.style.backgroundImage = 'none';
+    image.style.backgroundColor = '#000000'; //`url(${imgPandora})`
+    imageBlur.style.backgroundImage = 'none';
+    imageBlur.style.backgroundColor = '#000000'; //`url(${imgPandora})`;
+});
