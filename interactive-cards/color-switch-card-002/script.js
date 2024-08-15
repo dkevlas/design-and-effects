@@ -22,8 +22,8 @@ newElementDiv.classList.add('info');
 
 //Creamos información (2 info) //NODO
 //H1 - Título
-const infoThanatosH1 = document.createTextNode(`Hypnos, el Guardián del Sueño Eterno`);
-const infoHypnosH1 = document.createTextNode(`Thanatos, el Amo de la Muerte Cruel`);
+const infoThanatosH1 = document.createTextNode(`Thanatos, el Amo de la Muerte Cruel`);
+const infoHypnosH1 = document.createTextNode(`Hypnos, el Guardián del Sueño Eterno`);
 
 
 //P - Párrafo
@@ -35,13 +35,27 @@ const infoHypnosP = document.createTextNode(`
     Hypnos es el dios del sueño. En The Lost Canvas, es un personaje calculador y sereno que utiliza sus poderes para inducir el sueño eterno en sus enemigos. Su apariencia es elegante, con cabello dorado y una actitud calmada.
     `);
 
+//
 
+//Creamos elemento para BLUR al activar el evento (CLICK)
+
+const blur = document.createElement('div');
+blur.classList.add('blur');
+
+// Creamos elemento para Cerrar
+
+const close = document.createElement('div');
+close.classList.add('close');
 
 //Crear evento
 
 btnThanatos.addEventListener('click',()=>{
+    //Agregamos el BLUR
+    dad.appendChild(blur);
     //Agregamos el contenedor al body "dad"
     dad.appendChild(newElementDiv);
+    //Agregamos CLOSE al contenedor
+    newElementDiv.appendChild(close);
     //Agregamos el H1 y P al contenerdor DIV
     newElementDiv.appendChild(newElementH1);
     newElementDiv.appendChild(newElementP);
@@ -50,6 +64,8 @@ btnThanatos.addEventListener('click',()=>{
     newElementP.appendChild(infoThanatosP);
 });
 btnHypnos.addEventListener('click',()=>{
+    //Agregamos el BLUR
+    dad.appendChild(blur);
     //Agregamos el contenedor al body "dad"
     dad.appendChild(newElementDiv);
     //Agregamos el H1 y P al contenerdor DIV

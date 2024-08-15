@@ -68,7 +68,17 @@ body{
         }
     }
 }
-
+.blur{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: gray;
+    z-index: 0;
+    opacity: .5;
+    filter: blur(10px);
+}
 .info{
     min-width: none;
     width: 90%;
@@ -82,6 +92,7 @@ body{
     transform: translate(-50%, -50%);
     z-index: 10;
     color: $white;
+    border-radius: 10px;
     h1{
         margin-bottom: 30px;
         font-size: clamp(1.5rem, 2.5rem, 3.5rem);
@@ -89,7 +100,17 @@ body{
     p{
         font-size: clamp(1rem, 1.5rem, 2rem);
     }
+    .close{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+        bottom: -15%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
+
 @include mq(medium){
     .container{
         flex-direction: row;
