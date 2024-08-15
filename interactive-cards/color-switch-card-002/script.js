@@ -44,10 +44,14 @@ blur.classList.add('blur');
 
 // Creamos elemento para Cerrar
 
-const close = document.createElement('div');
+const close = document.createElement('span');
 close.classList.add('close');
 
-//Crear evento
+//Clase para el ICONS
+close.classList.add('material-symbols-outlined');
+close.innerText = 'close';
+
+//Creamos evento para los botones de los Dioses Gemelos
 
 btnThanatos.addEventListener('click',()=>{
     //Agregamos el BLUR
@@ -68,10 +72,18 @@ btnHypnos.addEventListener('click',()=>{
     dad.appendChild(blur);
     //Agregamos el contenedor al body "dad"
     dad.appendChild(newElementDiv);
+    //Agregamos CLOSE al contenedor
+    newElementDiv.appendChild(close);
     //Agregamos el H1 y P al contenerdor DIV
     newElementDiv.appendChild(newElementH1);
     newElementDiv.appendChild(newElementP);
     //Añadimos la info al elemento H1 y P
     newElementH1.appendChild(infoHypnosH1);
     newElementP.appendChild(infoHypnosP);
+});
+
+//Creamos evento para el botón CLOSE
+close.addEventListener('click',()=>{
+    dad.removeChild(newElementDiv);
+    dad.removeChild(blur);
 });
