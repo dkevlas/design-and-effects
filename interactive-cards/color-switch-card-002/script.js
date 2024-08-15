@@ -8,34 +8,14 @@ const btnHypnos = document.querySelector('.btn-hypnos');
 const dad = document.body;
 
 //Crear elemento contenedor para leer INFO
-
 const newElementDiv = document.createElement('div');
+//Le agregamos una clase al elemento contenedor
+newElementDiv.classList.add('info');
 
 //Creamos elementos H1 y P para el elemnto contenedor
 
 const newElementH1 = document.createElement('h1');
 const newElementP = document.createElement('p');
-
-//Le agregamos una clase al elemento contenedor
-
-newElementDiv.classList.add('info');
-
-//Creamos información (2 info) //NODO
-//H1 - Título
-const infoThanatosH1 = document.createTextNode(`Thanatos, el Amo de la Muerte Cruel`);
-const infoHypnosH1 = document.createTextNode(`Hypnos, el Guardián del Sueño Eterno`);
-
-
-//P - Párrafo
-const infoThanatosP = document.createTextNode(`
-    Thanatos es el dios de la muerte. A diferencia de su hermano Hypnos, Thanatos es más cruel y despiadado, disfrutando del sufrimiento de sus víctimas. En la serie, tiene cabello plateado y una personalidad arrogante.
-    `);
-
-const infoHypnosP = document.createTextNode(`
-    Hypnos es el dios del sueño. En The Lost Canvas, es un personaje calculador y sereno que utiliza sus poderes para inducir el sueño eterno en sus enemigos. Su apariencia es elegante, con cabello dorado y una actitud calmada.
-    `);
-
-//
 
 //Creamos elemento para BLUR al activar el evento (CLICK)
 
@@ -51,39 +31,50 @@ close.classList.add('close');
 close.classList.add('material-symbols-outlined');
 close.innerText = 'close';
 
+//******************************/
+//Crear función para mostrar la Información
+
+function showInfo(title, description){
+    // Limpiamos el contenedor antes de agregar contenido
+    newElementDiv.innerHTML = '';
+    //Creamo el elemento H1 y P
+    const newH1 = document.createElement('h1');
+    const newP = document.createElement('p');
+
+    //Añadimos información
+    newH1.textContent = title;
+    newP.textContent = description;
+
+    //Agregamos el BLUR
+    dad.appendChild(blur);
+
+    //Agregamos el contenedor al body "dad"
+    dad.appendChild(newElementDiv);
+
+    //Agregamos el  H1 y P al contenedor
+    newElementDiv.appendChild(newH1);
+    newElementDiv.appendChild(newP);
+
+    //Agregamos CLOSE al contenedor
+    newElementDiv.appendChild(close);
+}
+
 //Creamos evento para los botones de los Dioses Gemelos
 
-btnThanatos.addEventListener('click',()=>{
-    //Agregamos el BLUR
-    dad.appendChild(blur);
-    //Agregamos el contenedor al body "dad"
-    dad.appendChild(newElementDiv);
-    //Agregamos CLOSE al contenedor
-    newElementDiv.appendChild(close);
-    //Agregamos el H1 y P al contenerdor DIV
-    newElementDiv.appendChild(newElementH1);
-    newElementDiv.appendChild(newElementP);
-    //Añadimos la info al elemento H1 y P
-    newElementH1.appendChild(infoThanatosH1);
-    newElementP.appendChild(infoThanatosP);
-});
-btnHypnos.addEventListener('click',()=>{
-    //Agregamos el BLUR
-    dad.appendChild(blur);
-    //Agregamos el contenedor al body "dad"
-    dad.appendChild(newElementDiv);
-    //Agregamos CLOSE al contenedor
-    newElementDiv.appendChild(close);
-    //Agregamos el H1 y P al contenerdor DIV
-    newElementDiv.appendChild(newElementH1);
-    newElementDiv.appendChild(newElementP);
-    //Añadimos la info al elemento H1 y P
-    newElementH1.appendChild(infoHypnosH1);
-    newElementP.appendChild(infoHypnosP);
-});
+btnThanatos.addEventListener('click',()=>showInfo(
+    'Thanatos, el Amo de la Muerte Cruel',
+    'Thanatos es el dios de la muerte. A diferencia de su hermano Hypnos, Thanatos es más cruel y despiadado, disfrutando del sufrimiento de sus víctimas. En la serie, tiene cabello plateado y una personalidad arrogante.'
+));
+btnHypnos.addEventListener('click',()=>showInfo(
+    'Hypnos, el Guardián del Sueño Eterno',
+    'Hypnos es el dios del sueño. En The Lost Canvas, es un personaje calculador y sereno que utiliza sus poderes para inducir el sueño eterno en sus enemigos. Su apariencia es elegante, con cabello dorado y una actitud calmada.'
+));
 
-//Creamos evento para el botón CLOSE
+
+//Creamos evento para el botón CLOSE y así removemos la informacion
 close.addEventListener('click',()=>{
-    dad.removeChild(newElementDiv);
+    //Removemos el contenedor y el BLUR
+    dad.removeChild(newElementDiv)
     dad.removeChild(blur);
-});
+})
+
