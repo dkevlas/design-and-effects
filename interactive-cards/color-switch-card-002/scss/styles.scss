@@ -70,18 +70,38 @@ body{
 }
 
 .info{
-    width: 500px;
-    height: 500px;
-    background-color: red;
-    opacity: .5;
-    margin: auto;
-    margin-top: 3%;
+    min-width: none;
+    width: 90%;
+    padding: 50px 10px;
+    background-color: rgba($color: #000000, $alpha: .5);
     z-index: -20;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: $white;
+    h1{
+        margin-bottom: 30px;
+        font-size: clamp(1.5rem, 2.5rem, 3.5rem);
+    }
+    p{
+        font-size: clamp(1rem, 1.5rem, 2rem);
+    }
 }
 @include mq(medium){
     .container{
         flex-direction: row;
         aspect-ratio: 2/1;
         transform: translate(-50%, -50%);
+    }
+    .info{
+        width: 80%;
+    }
+}
+@include mq(large){
+    .info{
+        width: 60%;
     }
 }
