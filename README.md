@@ -7,4 +7,4 @@ Una colección de proyectos de diseño web y efectos interactivos, utilizando di
 Para visualizar o modificar los proyectos, clona el repositorio a tu máquina local:
 
 ```bash
-git clone https://github.com/tu-usuario/diseño-y-efectos.git
+git clone https://github.com/dkevlas/design-and-effects.git
