@@ -58,12 +58,16 @@ body{
             border: 2px double $white;
             user-select: none;
             cursor: pointer;
-            transition: .5s;
+            transition: .5s ease;
             &:hover{
-                color: $darkRed;
-                border: 2px solid $darkRed;
+                color: $black;
+                border: 2px solid $darkGray;
                 background-color: $white;
                 font-weight: 900;
+                transform: translateX(-50%) scale(1.1);
+            }
+            &:active{
+                transform: translateX(-50%) scale(.9);
             }
         }
     }
@@ -83,7 +87,7 @@ body{
     min-width: none;
     width: 90%;
     padding: 50px 10px;
-    background-color: rgba($color: #000000, $alpha: .5);
+    background-color: rgba($color: #000000, $alpha: .8);
     z-index: -20;
     text-align: center;
     position: absolute;
@@ -95,10 +99,12 @@ body{
     border-radius: 10px;
     h1{
         margin-bottom: 30px;
-        font-size: clamp(1.5rem, 2.5rem, 3.5rem);
+        font-size: clamp(1rem, 2rem, 3rem);
+        font-family: $font-primary;
     }
     p{
-        font-size: clamp(1rem, 1.5rem, 2rem);
+        font-size: clamp(1rem, 1.4rem, 1.8rem);
+        font-family: $font-secondary;
     }
     .close{
         position: absolute;
@@ -113,6 +119,18 @@ body{
         cursor: pointer;
         border-radius: 50%;
         border: 2px solid $white;
+        transition: .2s ease;
+        &:hover{
+            color: $white;
+            background-color: $veryDarkGray;
+            transform: translateX(-50%) scale(1.05);
+        }
+        &:active{
+            background-color: $darkGray;
+            color: $white;
+            box-shadow: inset 0 0 5px rgba($color: $black, $alpha: .8);
+            transform: translateX(-50%) scale(0.95);
+        }
     }
 }
 
@@ -129,5 +147,6 @@ body{
 @include mq(large){
     .info{
         width: 60%;
+        padding: 50px 50px;
     }
 }

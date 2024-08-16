@@ -1,19 +1,17 @@
-// FONT
+// COLORES
+
+//FONT y BORDES
 $white: #FFFFFF;
-
-// THANATOS
-//MAIN
 $black: #000000;
-$darkGray: #2F4F4F;
-//SECONDARY
-$lightGray: #808080;
-$darkRed: #8B0000;
+//HOVER Y ACTIVE
+$veryDarkGray: #1A1A1A;
+$darkGray: #333333;
 
+// FUENTES
 
-//HYPNOS
-//MAIN
-$midnightBlue: #003366;
-$violet: #6A0D91;
-//SECONDARY
-$lightBlue: #3399FF;
-$lightViolet: #8A2BE2;
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+//POPPINS
+$font-primary: 'Poppins', sans-serif;
+//LORA
+$font-secondary: 'Lora', serif;
