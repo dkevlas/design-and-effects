@@ -1,2 +1,5 @@
 # Ignorar archivos generados
 *.css
+
+# Ignora carpeta con imágenes
+images
