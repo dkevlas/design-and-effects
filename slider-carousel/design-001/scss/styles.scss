@@ -5,18 +5,33 @@ body{
     padding-top: 200px;
 }
 .slider{
-    height: 250px;
+    height: 350px;
     margin: auto;
     position: relative;
     width: 90%;
     display: grid;
-    background-color: black;
     place-items: center;
-    
-}
+    background-color: green;
+    overflow: hidden;
+}   
 .slide-track{
     display: flex;
     width: calc(250px *18);
+    background-color: red;
+    align-items: center;
+    height: 300px;
+    
+}
+.slide-moving{
+    animation: scroll 15s linear infinite;
+}
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px*9));
+    }
 }
 .slide{
     height: 200px;
@@ -24,9 +39,36 @@ body{
     display: flex;
     align-items: center;
     padding: 15px;
-    
+    perspective: 100px;
 }
 img{
     width: 100%;
+    transition: transform 1s;
+    object-fit: cover;
+    object-position: center;
     //opacity: .5;
+}
+img:hover{
+    transform: translateZ(5px);
+}
+.slider::before,
+.slider::after{
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+    border: 3px solid black;
+}
+.slider::before{
+    left: 0;
+    top: 0;
+    border: 3px solid blue;
+}
+.slider::after{
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+    border: 3px solid yellow;
 }
