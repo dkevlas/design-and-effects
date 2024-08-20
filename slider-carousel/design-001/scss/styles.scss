@@ -1,14 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body{
     min-height: 100vh;
-    display: grid;
+    display: flex;
     place-content: start;
-    padding-top: 200px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
 }
 .slider{
     height: 350px;
     margin: auto;
     position: relative;
-    width: 90%;
+    width: 80%;
     display: grid;
     place-items: center;
     overflow: hidden;
@@ -51,7 +58,7 @@ img:hover{
 }
 .slider::before,
 .slider::after{
-    background: linear-gradient(to right, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,1) 25%, rgba(255,255,255,0) 100%);
     content: '';
     height: 100%;
     position: absolute;
