@@ -9,6 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: red;
 }
 .section{
     width: 500px;
@@ -53,4 +54,23 @@ body{
     background-color: orange;
     flex-shrink: 0;
     padding: 10px;
+}
+
+.btns{
+    button{
+        width: 100px;
+        padding: 5px 10px;
+        border-radius: 15px;
+        border: 2px solid white;
+        color: white;
+        background-color: red;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.025);
+        }
+        &:active{
+            transform: scale(0.975);
+            background-color: #92000A;
+        }
+    }
 }
