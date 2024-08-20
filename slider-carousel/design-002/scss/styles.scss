@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    &::before, &::after{
+        padding: 0;
+        margin: 0;
+    }
 }
 body{
     display: flex;
@@ -25,7 +29,9 @@ body{
         width: 20%;
         height: 100%;
         top: 0;
-        background: linear-gradient(to right, red 60%, transparent 100%);
+        bottom: 0;
+        background: linear-gradient(to right, red, transparent);
+        z-index: 5;
     }
     &::before{
         left: 0;
@@ -40,6 +46,7 @@ body{
     display: flex;
     gap: 5px;
     padding: 0 5px;
+    border: 1px solid white;
     img{
         width: 100%;
         height: 100%;
@@ -51,7 +58,6 @@ body{
 .item {
     width: 250px;
     aspect-ratio: 2/3;
-    background-color: orange;
     flex-shrink: 0;
     padding: 10px;
 }
@@ -73,4 +79,16 @@ body{
             background-color: #92000A;
         }
     }
+}/*
+.moving{
+    animation: moving 5s linear;
+    animation-delay: 2.5s;
 }
+@keyframes moving {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}*/
