@@ -17,14 +17,14 @@ body{
     justify-content: center;
     position: relative;
     background-color: red;
-    //overflow: hidden;
+    overflow: hidden;
     &::before, &::after{
         content: '';
         position: absolute;
         width: 20%;
         height: 100%;
         top: 0;
-        background: linear-gradient(to right, red , transparent);
+        background: linear-gradient(to right, red 60%, transparent 100%);
     }
     &::before{
         left: 0;
@@ -39,6 +39,12 @@ body{
     display: flex;
     gap: 5px;
     padding: 0 5px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 }
 
 .item {
@@ -46,8 +52,5 @@ body{
     aspect-ratio: 2/3;
     background-color: orange;
     flex-shrink: 0;
-    text-overflow: ellipsis;
-    overflow-y: auto;
     padding: 10px;
-    text-wrap: pretty;
 }
