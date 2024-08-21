@@ -74,7 +74,8 @@ img{
     background-size: cover;
     h1{
         font-size: 180px;
-        
+        font-family: 'Courier New', Courier, monospace;
+        user-select: none;
         .stroke{
             color: transparent;
             -webkit-text-stroke: 2px white;
