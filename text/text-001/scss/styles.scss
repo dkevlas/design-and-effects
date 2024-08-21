@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #555;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    position: relative;
+}
+.img-blur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url('/images/BlackPink_001.jpg');
+    background-size: cover;
+    filter: blur(10px);
+}
+
+.container{
+    width: 80%;
+    aspect-ratio: 16/9;
+    position: relative;
+    border: 5px solid white;
+    box-shadow: 0 0 5px white, 0 0 10px black;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.item:first-child{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    img{
+        object-position: end;
+        filter: blur(10px);
+    }
+}
+.item-end{
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    img{
+        object-position: start;
+    }
+}
+.item:nth-child(2){
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    //opacity: .5;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/BlackPink_001.jpg');
+    background-clip: text;
+    background-size: cover;
+    h1{
+        font-size: 180px;
+        
+        .stroke{
+            color: transparent;
+            -webkit-text-stroke: 2px white;
+        }
+        .color{
+            color: white;
+            //-webkit-text-stroke: 2px black
+        }
+    }
+}
