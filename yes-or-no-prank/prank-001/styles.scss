@@ -4,39 +4,60 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #faa;
+    width: 100vw;
+    height: 100vh;
+    align-content: center;
+}
+.bg-blur{
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-position: center;
     background-size: cover;
-    //filter: blur(5px);
+    filter: blur(15px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 .container{
     width: 80%;
-    height: 60%;
-    border: 1px solid black;
+    height: 80%;
     position: relative;
+    margin: auto;
+    border: 3px solid white;
+    box-shadow: inset 0 0 15px white;
+    box-shadow: 0 0 15px white, 0 0 10px red, 0 0 5px white;
     .img-item{
         position: absolute;
         width: 100%;
         height: 100%;
+        top: 0;
+        left: 0;
         .img{
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
     }
     h1{
         text-align: center;
+        color: white;
+        position: absolute;
+        font-size: clamp(50px, 5vw, 100px);
+        left: 50%;
+        top: 30%;
+        transform: translateX(-50%);
+        user-select: none;
+        transition: color .25s;
     }
-
 }
 .options{
     color: white;
     .option{
         width: 50px;
+        user-select: none;
         background-color: black;
         height: 30px;
         text-align: center;
@@ -44,12 +65,21 @@ body{
         border-radius: 15px;
         border: 2px solid white;
         position: absolute;
-        top: 25%;
+        top: 70%;
+        cursor: pointer;
+        transition: opacity .25s, transform .25s;
     }
     .siii{
         left: 30%;
+        &:hover{
+            transform: scale(1.3);
+        }
     }
     .nooo{
         right: 30%;
+        transition: top .2s, left .2s;
+        &:hover{
+            opacity: .7;
+        }
     }
 }
