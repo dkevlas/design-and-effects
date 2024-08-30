@@ -4,6 +4,10 @@ const h1Title = document.querySelector('.h1-title') as HTMLHeadingElement;
 const rutaImagen = imagen.src;
 todo.style.backgroundImage = `url(${rutaImagen})`;
 
+const body = document.body;
+//Crear un elemento
+const elementoDiv = document.createElement('div');
+elementoDiv.classList.add('rojo');
 
 //Obtener las opciones
 const optionNO = document.querySelector('.nooo') as HTMLDivElement;
@@ -16,8 +20,8 @@ function crearNumRandom(): number{
     return Math.round(nRamdom)
 }
 function moverElemento(){
-    optionNO.style.top = `calc(${crearNumRandom()}%)`;
-    optionNO.style.left = `calc(${crearNumRandom()}%)`;
+    optionNO.style.top = `${crearNumRandom()}%`;
+    optionNO.style.left = `${crearNumRandom()}%`;
 };
 
 if(optionNO){
@@ -26,7 +30,12 @@ if(optionNO){
 
 if(optionSI){
     optionSI.addEventListener('click',()=>{
-        console.log('ELIMINADO');
         optionNO.removeEventListener('mouseenter', moverElemento);
+        optionNO.style.opacity = '.5';
+        h1Title.style.color = 'red';
+        h1Title.style.zIndex = '10';
+        h1Title.textContent = 'Entonces muere...';
+        body.appendChild(elementoDiv);
     })
 }
+
