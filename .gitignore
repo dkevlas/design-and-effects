@@ -3,3 +3,10 @@
 
 # Ignora carpeta con imágenes
 images
+
+# Ignorar JS generado
+dist/
+
+# Dependencias de Node.js
+node_modules/
+package-lock.json
